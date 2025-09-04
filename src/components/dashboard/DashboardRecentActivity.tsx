@@ -195,10 +195,10 @@ const DashboardRecentActivity: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 class="text-xl font-bold text-foreground mb-1">
+          <h2 className="text-xl font-bold text-foreground mb-1">
             Atividades Recentes
           </h2>
-          <p class="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm">
             Seu histórico de ações e progresso
           </p>
         </div>
@@ -250,11 +250,11 @@ const DashboardRecentActivity: React.FC = () => {
                       <h3 className={`font-semibold ${activity.color} group-hover:text-opacity-80 transition-colors`}>
                         {activity.title}
                       </h3>
-                      <p class="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-sm leading-relaxed">
                         {activity.description}
                       </p>
                     </div>
-                    <span class="text-xs text-muted-foreground whitespace-nowrap">
+                    <span className="text-xs text-muted-foreground whitespace-nowrap">
                       {getRelativeTime(activity.timestamp)}
                     </span>
                   </div>
@@ -279,10 +279,10 @@ const DashboardRecentActivity: React.FC = () => {
             className="text-center py-12"
           >
             <div className="text-4xl mb-3">📭</div>
-            <h3 class="text-lg font-semibold text-foreground mb-2">
+            <h3 className="text-lg font-semibold text-foreground mb-2">
               Nenhuma atividade encontrada
             </h3>
-            <p class="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm">
               Comece a explorar a plataforma para ver suas atividades aqui
             </p>
           </motion.div>
@@ -298,20 +298,20 @@ const DashboardRecentActivity: React.FC = () => {
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">15</p>
-            <p class="text-muted-foreground text-xs">Ações Hoje</p>
+            <p className="text-lg font-bold text-foreground mb-1">15</p>
+            <p className="text-muted-foreground text-xs">Ações Hoje</p>
           </div>
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">89</p>
-            <p class="text-muted-foreground text-xs">Esta Semana</p>
+            <p className="text-lg font-bold text-foreground mb-1">89</p>
+            <p className="text-muted-foreground text-xs">Esta Semana</p>
           </div>
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">234</p>
-            <p class="text-muted-foreground text-xs">Este Mês</p>
+            <p className="text-lg font-bold text-foreground mb-1">234</p>
+            <p className="text-muted-foreground text-xs">Este Mês</p>
           </div>
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">12</p>
-            <p class="text-muted-foreground text-xs">Sequência</p>
+            <p className="text-lg font-bold text-foreground mb-1">12</p>
+            <p className="text-muted-foreground text-xs">Sequência</p>
           </div>
         </div>
       </motion.div>

@@ -112,10 +112,10 @@ const DashboardOpportunities: React.FC = () => {
     <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 class="text-lg font-bold text-foreground mb-1">
+          <h2 className="text-lg font-bold text-foreground mb-1">
             Oportunidades
           </h2>
-          <p class="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm">
             Recomendadas para você
           </p>
         </div>
@@ -147,7 +147,7 @@ const DashboardOpportunities: React.FC = () => {
                     ⏰ {opportunity.deadline}
                   </span>
                 </div>
-                <p class="text-muted-foreground text-sm leading-relaxed mb-2">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                   {opportunity.description}
                 </p>
               </div>
@@ -170,7 +170,7 @@ const DashboardOpportunities: React.FC = () => {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1">
                   <span className="text-green-400">💰</span>
-                  <span class="text-muted-foreground">{opportunity.reward}</span>
+                  <span className="text-muted-foreground">{opportunity.reward}</span>
                 </div>
                 <span className={`px-2 py-1 rounded-full text-xs ${getDifficultyColor(opportunity.difficulty)}`}>
                   {getDifficultyLabel(opportunity.difficulty)}
@@ -179,10 +179,10 @@ const DashboardOpportunities: React.FC = () => {
               
               {opportunity.applicants && opportunity.maxApplicants && (
                 <div className="flex items-center gap-1">
-                  <span class="text-muted-foreground text-xs">
+                  <span className="text-muted-foreground text-xs">
                     {opportunity.applicants}/{opportunity.maxApplicants}
                   </span>
-                  <div class="w-16 bg-border rounded-full h-1">
+                  <div className="w-16 bg-border rounded-full h-1">
                     <div 
                       className="bg-primary-500 h-1 rounded-full"
                       style={{ 
@@ -217,12 +217,12 @@ const DashboardOpportunities: React.FC = () => {
       >
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">23</p>
-            <p class="text-muted-foreground text-xs">Disponíveis</p>
+            <p className="text-lg font-bold text-foreground mb-1">23</p>
+            <p className="text-muted-foreground text-xs">Disponíveis</p>
           </div>
           <div>
-            <p class="text-lg font-bold text-foreground mb-1">5</p>
-            <p class="text-muted-foreground text-xs">Aplicadas</p>
+            <p className="text-lg font-bold text-foreground mb-1">5</p>
+            <p className="text-muted-foreground text-xs">Aplicadas</p>
           </div>
         </div>
       </motion.div>

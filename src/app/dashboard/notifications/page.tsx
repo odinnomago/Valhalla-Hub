@@ -26,9 +26,19 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+interface Notification {
+  id: number;
+  unread: boolean;
+  archived: boolean;
+  platform?: string;
+  title?: string;
+  message?: string;
+  time?: string;
+}
+
 export default function NotificationsPage() {
   // These will be replaced with real data from user context/hooks
-  const [notifications, setNotifications] = useState([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 

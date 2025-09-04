@@ -122,10 +122,10 @@ const DashboardQuickActions: React.FC = () => {
     <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 class="text-xl font-bold text-foreground mb-1">
+          <h2 className="text-xl font-bold text-foreground mb-1">
             Ações Rápidas
           </h2>
-          <p class="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm">
             Acesse rapidamente as principais funcionalidades
           </p>
         </div>
@@ -167,7 +167,7 @@ const DashboardQuickActions: React.FC = () => {
               <h3 className={`font-semibold mb-1 ${action.color} group-hover:text-opacity-80 transition-colors`}>
                 {action.title}
               </h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {action.description}
               </p>
             </div>
@@ -190,10 +190,10 @@ const DashboardQuickActions: React.FC = () => {
             className="bg-gradient-to-br from-primary-500/10 to-secondary-500/10 border border-primary-500/20 rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden"
           >
             <div className="text-3xl mb-2">🔓</div>
-            <h3 class="text-foreground font-semibold mb-1">
+            <h3 className="text-foreground font-semibold mb-1">
               Mais Recursos
             </h3>
-            <p class="text-muted-foreground text-sm mb-3">
+            <p className="text-muted-foreground text-sm mb-3">
               Desbloqueie funcionalidades avançadas
             </p>
             <button className="bg-primary-500 text-black px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-400 transition-colors">
@@ -212,16 +212,16 @@ const DashboardQuickActions: React.FC = () => {
       >
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <p class="text-2xl font-bold text-foreground mb-1">5</p>
-            <p class="text-muted-foreground text-sm">Ações hoje</p>
+            <p className="text-2xl font-bold text-foreground mb-1">5</p>
+            <p className="text-muted-foreground text-sm">Ações hoje</p>
           </div>
           <div>
-            <p class="text-2xl font-bold text-foreground mb-1">23</p>
-            <p class="text-muted-foreground text-sm">Esta semana</p>
+            <p className="text-2xl font-bold text-foreground mb-1">23</p>
+            <p className="text-muted-foreground text-sm">Esta semana</p>
           </div>
           <div>
-            <p class="text-2xl font-bold text-foreground mb-1">89</p>
-            <p class="text-muted-foreground text-sm">Este mês</p>
+            <p className="text-2xl font-bold text-foreground mb-1">89</p>
+            <p className="text-muted-foreground text-sm">Este mês</p>
           </div>
         </div>
       </motion.div>
@@ -236,8 +236,8 @@ const DashboardQuickActions: React.FC = () => {
         <div className="flex items-start gap-3">
           <span className="text-blue-400 text-lg">💡</span>
           <div>
-            <h4 class="text-foreground font-medium mb-1">Dica do Dia</h4>
-            <p class="text-muted-foreground text-sm leading-relaxed">
+            <h4 className="text-foreground font-medium mb-1">Dica do Dia</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Complete pelo menos uma ação por dia para manter sua sequência ativa e ganhar pontos extras!
             </p>
           </div>

@@ -141,10 +141,10 @@ const DashboardUpgrade: React.FC = () => {
   if (!showUpgrade || upgradeSuggestions.length === 0) {
     return (
       <div className="bg-card border border-border/50 rounded-2xl p-6">
-        <div class="text-center py-8">
+        <div className="text-center py-8">
           <div className="text-4xl mb-3">🎉</div>
-          <h3 class="text-foreground font-bold mb-2">Você está no plano perfeito!</h3>
-          <p class="text-muted-foreground text-sm">
+          <h3 className="text-foreground font-bold mb-2">Você está no plano perfeito!</h3>
+          <p className="text-muted-foreground text-sm">
             Continue aproveitando todos os benefícios do seu plano atual.
           </p>
         </div>
@@ -160,10 +160,10 @@ const DashboardUpgrade: React.FC = () => {
     <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 class="text-lg font-bold text-foreground mb-1">
+          <h2 className="text-lg font-bold text-foreground mb-1">
             Sugestão de Upgrade
           </h2>
-          <p class="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm">
             Baseado no seu uso
           </p>
         </div>
@@ -190,10 +190,10 @@ const DashboardUpgrade: React.FC = () => {
               {getUrgencyIcon(currentSuggestionData.urgency)}
             </span>
             <div className="flex-1">
-              <h3 class="text-foreground font-bold mb-1">
+              <h3 className="text-foreground font-bold mb-1">
                 {currentSuggestionData.title}
               </h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {currentSuggestionData.description}
               </p>
             </div>
@@ -201,33 +201,33 @@ const DashboardUpgrade: React.FC = () => {
 
           {/* Benefits */}
           <div className="mb-4">
-            <h4 class="text-foreground font-semibold mb-2 text-sm">
+            <h4 className="text-foreground font-semibold mb-2 text-sm">
               🎯 Benefícios Inclusos:
             </h4>
             <div className="space-y-1">
               {currentSuggestionData.benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm">
                   <span className="text-green-400">✅</span>
-                  <span class="text-muted-foreground">{benefit}</span>
+                  <span className="text-muted-foreground">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Pricing */}
-          <div class="bg-card rounded-lg p-3 mb-4">
+          <div className="bg-card rounded-lg p-3 mb-4">
             <div className="flex items-center justify-between">
               <div>
-                <p class="text-muted-foreground text-xs">Plano Atual</p>
-                <p class="text-foreground font-semibold">
-                  {currentPlan?.name} - {formatPrice(currentPlan?.price || 0)}/mês
+                <p className="text-muted-foreground text-xs">Plano Atual</p>
+                <p className="text-foreground font-semibold">
+                  {currentPlan?.name} - {formatPrice(currentPlan?.price?.monthly || 0)}/mês
                 </p>
               </div>
               <span className="text-primary-400">→</span>
               <div className="text-right">
-                <p class="text-muted-foreground text-xs">Upgrade para</p>
+                <p className="text-muted-foreground text-xs">Upgrade para</p>
                 <p className="text-primary-400 font-semibold">
-                  {targetPlan?.name} - {formatPrice(targetPlan?.price || 0)}/mês
+                  {targetPlan?.name} - {formatPrice(targetPlan?.price?.monthly || 0)}/mês
                 </p>
               </div>
             </div>
@@ -245,7 +245,7 @@ const DashboardUpgrade: React.FC = () => {
 
           {/* Trigger Info */}
           <div className="mt-3 text-center">
-            <p class="text-muted-foreground text-xs">
+            <p className="text-muted-foreground text-xs">
               💡 {currentSuggestionData.trigger}
             </p>
           </div>
@@ -278,12 +278,12 @@ const DashboardUpgrade: React.FC = () => {
       >
         <div className="grid grid-cols-2 gap-4 text-center text-sm">
           <div>
-            <p class="text-foreground font-semibold mb-1">7 dias</p>
-            <p class="text-muted-foreground text-xs">Teste grátis</p>
+            <p className="text-foreground font-semibold mb-1">7 dias</p>
+            <p className="text-muted-foreground text-xs">Teste grátis</p>
           </div>
           <div>
-            <p class="text-foreground font-semibold mb-1">0%</p>
-            <p class="text-muted-foreground text-xs">Taxa cancelamento</p>
+            <p className="text-foreground font-semibold mb-1">0%</p>
+            <p className="text-muted-foreground text-xs">Taxa cancelamento</p>
           </div>
         </div>
       </motion.div>
