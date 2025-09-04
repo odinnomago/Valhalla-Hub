@@ -12,6 +12,7 @@ import { Badge } from '../ui/badge';
 import { useAuth } from '@/hooks/useAuth';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useLanguage, type Language, type NavKey } from '@/hooks/use-language';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const navTranslations: Record<Language, Record<NavKey, string>> = {
   en: {
@@ -57,40 +58,10 @@ export default function Header() {
   const { items, removeItem, clearCart } = useCart();
   const { user } = useAuth();
   const { language, setLanguage } = useLanguage();
+  const { openLoginModal, openRegisterModal } = useAuthModal();
 
   const itemCount = items.length;
   const cartTotal = items.reduce((total, item) => total + item.price, 0).toFixed(2);
-
-  const navigation = [
-    {
-      name: 'Home',
-      href: '/',
-    },
-    {
-      name: 'Bookings',
-      href: '/bookings',
-    },
-    {
-      name: 'Record Label',
-      href: '/gravadora',
-    },
-    {
-      name: 'Marketplace',
-      href: '/marketplace',
-    },
-    {
-      name: 'Academy',
-      href: '/academy',
-    },
-    {
-      name: 'Events',
-      href: '/events',
-    },
-    {
-      name: 'Blog',
-      href: '/blog',
-    },
-  ];
 
   return (
     <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-lg border-b border-border/50 transition-all duration-300">
@@ -142,7 +113,13 @@ export default function Header() {
                       {items.map((item) => (
                         <div key={item.id} className="flex items-center gap-4 p-3 rounded-lg bg-card/50 hover:bg-card/80 transition-colors duration-300 group">
                           <div className="relative h-16 w-16 overflow-hidden rounded-md">
-                            <Image src={item.imageUrl} alt={item.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                            {item.imageUrl ? (
+                              <Image src={item.imageUrl} alt={item.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                            ) : (
+                              <div className="bg-muted w-full h-full flex items-center justify-center">
+                                <Music className="h-8 w-8 text-muted-foreground" />
+                              </div>
+                            )}
                           </div>
                           <div className="flex-1 text-sm">
                             <h3 className="font-medium group-hover:text-primary transition-colors duration-300">{item.name}</h3>
@@ -227,11 +204,18 @@ export default function Header() {
               </Button>
             ) : (
               <>
-                <Button variant="outline" asChild className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300">
-                  <Link href="/auth/login">Log In</Link>
+                <Button 
+                  variant="outline" 
+                  className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+                  onClick={openLoginModal}
+                >
+                  Log In
                 </Button>
-                <Button asChild className="netflix-button bg-primary hover:bg-primary/90 px-6 py-2">
-                  <Link href="/auth/register">Junte-se ao Valhalla</Link>
+                <Button 
+                  className="netflix-button bg-primary hover:bg-primary/90 px-6 py-2"
+                  onClick={openRegisterModal}
+                >
+                  Junte-se ao Valhalla
                 </Button>
               </>
             )}
@@ -273,11 +257,11 @@ export default function Header() {
                       </Button>
                     ) : (
                       <>
-                        <Button variant="outline" asChild>
-                          <Link href="/auth/login">Log In</Link>
+                        <Button variant="outline" onClick={openLoginModal}>
+                          Log In
                         </Button>
-                        <Button asChild>
-                          <Link href="/auth/register">Junte-se ao Valhalla</Link>
+                        <Button onClick={openRegisterModal}>
+                          Junte-se ao Valhalla
                         </Button>
                       </>
                     )}

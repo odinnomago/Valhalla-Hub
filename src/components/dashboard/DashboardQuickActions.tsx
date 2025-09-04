@@ -119,17 +119,17 @@ const DashboardQuickActions: React.FC = () => {
   const visibleActions = getVisibleActions();
 
   return (
-    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+    <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-bold text-white mb-1">
+          <h2 class="text-xl font-bold text-foreground mb-1">
             Ações Rápidas
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p class="text-muted-foreground text-sm">
             Acesse rapidamente as principais funcionalidades
           </p>
         </div>
-        <button className="text-gray-400 hover:text-white transition-colors">
+        <button className="text-muted-foreground hover:text-foreground transition-colors">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
           </svg>
@@ -167,7 +167,7 @@ const DashboardQuickActions: React.FC = () => {
               <h3 className={`font-semibold mb-1 ${action.color} group-hover:text-opacity-80 transition-colors`}>
                 {action.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p class="text-muted-foreground text-sm leading-relaxed">
                 {action.description}
               </p>
             </div>
@@ -190,10 +190,10 @@ const DashboardQuickActions: React.FC = () => {
             className="bg-gradient-to-br from-primary-500/10 to-secondary-500/10 border border-primary-500/20 rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden"
           >
             <div className="text-3xl mb-2">🔓</div>
-            <h3 className="text-white font-semibold mb-1">
+            <h3 class="text-foreground font-semibold mb-1">
               Mais Recursos
             </h3>
-            <p className="text-gray-300 text-sm mb-3">
+            <p class="text-muted-foreground text-sm mb-3">
               Desbloqueie funcionalidades avançadas
             </p>
             <button className="bg-primary-500 text-black px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-400 transition-colors">
@@ -208,20 +208,20 @@ const DashboardQuickActions: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-6 pt-6 border-t border-gray-800"
+        className="mt-6 pt-6 border-t border-border/50"
       >
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <p className="text-2xl font-bold text-white mb-1">5</p>
-            <p className="text-gray-400 text-sm">Ações hoje</p>
+            <p class="text-2xl font-bold text-foreground mb-1">5</p>
+            <p class="text-muted-foreground text-sm">Ações hoje</p>
           </div>
           <div>
-            <p className="text-2xl font-bold text-white mb-1">23</p>
-            <p className="text-gray-400 text-sm">Esta semana</p>
+            <p class="text-2xl font-bold text-foreground mb-1">23</p>
+            <p class="text-muted-foreground text-sm">Esta semana</p>
           </div>
           <div>
-            <p className="text-2xl font-bold text-white mb-1">89</p>
-            <p className="text-gray-400 text-sm">Este mês</p>
+            <p class="text-2xl font-bold text-foreground mb-1">89</p>
+            <p class="text-muted-foreground text-sm">Este mês</p>
           </div>
         </div>
       </motion.div>
@@ -236,8 +236,8 @@ const DashboardQuickActions: React.FC = () => {
         <div className="flex items-start gap-3">
           <span className="text-blue-400 text-lg">💡</span>
           <div>
-            <h4 className="text-blue-300 font-medium mb-1">Dica do Dia</h4>
-            <p className="text-blue-200 text-sm leading-relaxed">
+            <h4 class="text-foreground font-medium mb-1">Dica do Dia</h4>
+            <p class="text-muted-foreground text-sm leading-relaxed">
               Complete pelo menos uma ação por dia para manter sua sequência ativa e ganhar pontos extras!
             </p>
           </div>

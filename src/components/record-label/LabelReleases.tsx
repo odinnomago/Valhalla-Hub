@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, ExternalLink } from 'lucide-react';
 
 interface Release {
   id: string;
@@ -12,7 +12,10 @@ interface Release {
   releaseDate: string;
   type: 'Single' | 'EP' | 'Album';
   streams: string;
+  description: string;
+  bandcampUrl: string;
   spotifyUrl?: string;
+  tracks: string[];
 }
 
 const LabelReleases: React.FC = () => {
@@ -21,57 +24,276 @@ const LabelReleases: React.FC = () => {
   const releases: Release[] = [
     {
       id: '1',
-      title: 'Midnight Dreams',
-      artist: 'Luna Sinclair',
-      coverUrl: '/images/releases/midnight-dreams.jpg',
-      releaseDate: '2024-01-15',
-      type: 'Single',
-      streams: '2.1M'
+      title: 'Valhalla Tales Vol.1',
+      artist: 'Various Artists',
+      coverUrl: '/images/releases/valhalla-tales-vol1.jpg',
+      releaseDate: '2024-01-01',
+      type: 'Album',
+      streams: '1.2M',
+      description: 'A compilation of the best tracks from our talented roster of artists, showcasing the diversity and creativity of the Valhalla Records collective.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/valhalla-tales-vol-1',
+      tracks: [
+        'Odin\'s Call - Intro',
+        'Raven\'s Flight',
+        'Thor\'s Hammer',
+        'Loki\'s Trick',
+        'Freya\'s Tears',
+        'Balder\'s Light',
+        'Fenrir\'s Howl',
+        'Yggdrasil\'s Roots'
+      ]
     },
     {
       id: '2',
-      title: 'Urban Vibes',
-      artist: 'Marcus Silva',
-      coverUrl: '/images/releases/urban-vibes.jpg',
-      releaseDate: '2024-01-20',
-      type: 'EP',
-      streams: '1.8M'
+      title: 'Climate Echoes',
+      artist: 'Various Artists',
+      coverUrl: '/images/releases/climate-echoes.jpg',
+      releaseDate: '2024-02-01',
+      type: 'Album',
+      streams: '980K',
+      description: 'An exploration of our changing world through sound, featuring experimental electronic compositions that reflect environmental themes.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/climate-echoes',
+      tracks: [
+        'Melting Ice',
+        'Rising Tides',
+        'Desert Winds',
+        'Forest Fire',
+        'Urban Heat',
+        'Seasonal Shift',
+        'Renewable Dreams',
+        'Carbon Footprint'
+      ]
     },
     {
       id: '3',
-      title: 'Electric Nights',
-      artist: 'DJ Phoenix',
-      coverUrl: '/images/releases/electric-nights.jpg',
-      releaseDate: '2024-02-01',
+      title: 'Cosmic Lotus',
+      artist: 'Various Artists',
+      coverUrl: '/images/releases/cosmic-lotus.jpg',
+      releaseDate: '2024-03-01',
       type: 'Album',
-      streams: '3.2M'
+      streams: '1.5M',
+      description: 'A journey through space and consciousness, blending ambient soundscapes with rhythmic electronic elements for a transcendent listening experience.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/cosmic-lotus',
+      tracks: [
+        'Big Bang Birth',
+        'Stellar Nurseries',
+        'Black Hole Meditation',
+        'Nebula Dreams',
+        'Planetary Alignment',
+        'Cosmic Dance',
+        'Supernova Finale',
+        'Lotus Bloom'
+      ]
     },
     {
       id: '4',
-      title: 'Indie Soul',
-      artist: 'Aurora Dreams',
-      coverUrl: '/images/releases/indie-soul.jpg',
-      releaseDate: '2024-02-10',
-      type: 'Single',
-      streams: '1.5M'
+      title: 'Alien Connect',
+      artist: 'VAJRAPANI',
+      coverUrl: '/images/releases/alien-connect.jpg',
+      releaseDate: '2024-04-01',
+      type: 'Album',
+      streams: '870K',
+      description: 'VAJRAPANI\'s debut album explores themes of extraterrestrial communication and the unknown, featuring hypnotic rhythms and otherworldly sound design.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/alien-connect',
+      tracks: [
+        'First Contact',
+        'Transmission Received',
+        'Galactic Highway',
+        'Zero Gravity',
+        'Alien Embassy',
+        'Mind Meld',
+        'Interdimensional Portal',
+        'Return Journey'
+      ]
     },
     {
       id: '5',
-      title: 'Raízes Modernas',
-      artist: 'Violeta Campos',
-      coverUrl: '/images/releases/raizes-modernas.jpg',
-      releaseDate: '2024-02-15',
-      type: 'EP',
-      streams: '987K'
+      title: 'Xenoglossic Ressonance',
+      artist: 'SONNORUM',
+      coverUrl: '/images/releases/xenoglossic-ressonance.jpg',
+      releaseDate: '2024-05-01',
+      type: 'Album',
+      streams: '750K',
+      description: 'SONNORUM\'s sophomore album delves into the concept of unknown languages and their musical expressions, creating a unique sonic vocabulary.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/xenoglossic-ressonance',
+      tracks: [
+        'Proto-Language',
+        'Syllabic Patterns',
+        'Grammatical Structures',
+        'Semantic Fields',
+        'Pragmatic Usage',
+        'Discourse Analysis',
+        'Language Evolution',
+        'Post-Linguistic'
+      ]
     },
     {
       id: '6',
-      title: 'Neon Waves',
-      artist: 'Neon Collective',
-      coverUrl: '/images/releases/neon-waves.jpg',
-      releaseDate: '2024-02-25',
+      title: 'Yule',
+      artist: 'ANNEXED DATA',
+      coverUrl: '/images/releases/yule.jpg',
+      releaseDate: '2024-06-01',
       type: 'Album',
-      streams: '2.4M'
+      streams: '620K',
+      description: 'A dark electronic celebration of the winter solstice, featuring atmospheric compositions that capture the mystery and magic of the season.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/yule',
+      tracks: [
+        'Winter\'s Embrace',
+        'Solstice Night',
+        'Evergreen Spirits',
+        'Yule Log',
+        'Mistletoe Dreams',
+        'Santa\'s Workshop',
+        'New Year\'s Dawn',
+        'Return of the Light'
+      ]
+    },
+    {
+      id: '7',
+      title: 'Soundtrack for a Hi-tech Script',
+      artist: 'ANNEXED DATA',
+      coverUrl: '/images/releases/hi-tech-script.jpg',
+      releaseDate: '2024-07-01',
+      type: 'Album',
+      streams: '580K',
+      description: 'A cinematic exploration of technology and human interaction, featuring compositions that blend organic and synthetic elements.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/soundtrack-for-a-hi-tech-script',
+      tracks: [
+        'Opening Sequence',
+        'Digital Dawn',
+        'Human Interface',
+        'System Error',
+        'Cyber Security',
+        'Virtual Reality',
+        'Artificial Intelligence',
+        'Closing Credits'
+      ]
+    },
+    {
+      id: '8',
+      title: 'INSIGHT',
+      artist: 'KROMATIK',
+      coverUrl: '/images/releases/insight.jpg',
+      releaseDate: '2024-08-01',
+      type: 'Album',
+      streams: '720K',
+      description: 'KROMATIK\'s debut album offers a kaleidoscopic journey through electronic soundscapes, with each track revealing new layers of sonic detail.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/insight',
+      tracks: [
+        'Prism Entry',
+        'Spectrum Analysis',
+        'Color Theory',
+        'Light Refraction',
+        'Chromatic Aberration',
+        'Rainbow Reflection',
+        'White Light',
+        'Afterimage'
+      ]
+    },
+    {
+      id: '9',
+      title: 'PSAWCHEDELIC',
+      artist: 'CURUJA',
+      coverUrl: '/images/releases/psawchedelic.jpg',
+      releaseDate: '2024-09-01',
+      type: 'Album',
+      streams: '650K',
+      description: 'A psychedelic journey through sound and consciousness, featuring mind-bending compositions that challenge perception and reality.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/psawchedelic',
+      tracks: [
+        'Trip Initiation',
+        'Sensory Overload',
+        'Temporal Distortion',
+        'Reality Warp',
+        'Mind Expansion',
+        'Cosmic Consciousness',
+        'Universal Connection',
+        'Return to Normal'
+      ]
+    },
+    {
+      id: '10',
+      title: 'REALMS SLAYER',
+      artist: 'FREAK FREQZ',
+      coverUrl: '/images/releases/realms-slayer.jpg',
+      releaseDate: '2024-10-01',
+      type: 'Album',
+      streams: '810K',
+      description: 'FREAK FREQZ\'s powerful debut explores themes of conquest and transcendence, with aggressive rhythms and epic soundscapes.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/realms-slayer',
+      tracks: [
+        'Realm Conquest',
+        'Battle Cry',
+        'Warrior\'s Path',
+        'Dragon Slayer',
+        'Kingdom Fall',
+        'Victory March',
+        'Throne Claim',
+        'Empire Rise'
+      ]
+    },
+    {
+      id: '11',
+      title: 'A GLAZY INTO ABYSS',
+      artist: 'SURTUR',
+      coverUrl: '/images/releases/glazy-abyss.jpg',
+      releaseDate: '2024-11-01',
+      type: 'Album',
+      streams: '590K',
+      description: 'SURTUR\'s dark exploration of the depths, featuring heavy, atmospheric compositions that evoke the mystery of the unknown.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/a-glazy-into-abyss',
+      tracks: [
+        'Descent Begins',
+        'Dark Waters',
+        'Pressure Build',
+        'Ocean Floor',
+        'Deep Sea Creatures',
+        'Thermal Vents',
+        'Abyssal Plain',
+        'Return to Surface'
+      ]
+    },
+    {
+      id: '12',
+      title: 'OPROEP VAN DIE TOWENAAR',
+      artist: 'Amonati',
+      coverUrl: '/images/releases/oproep-towenaar.jpg',
+      releaseDate: '2024-12-01',
+      type: 'Album',
+      streams: '480K',
+      description: 'Amonati\'s mystical journey through ancient sounds and modern production, creating a bridge between past and future.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/oproep-van-die-towenaar',
+      tracks: [
+        'Ancient Calling',
+        'Mystic Ritual',
+        'Shaman\'s Dance',
+        'Spirit Journey',
+        'Oracle\'s Message',
+        'Tribal Gathering',
+        'Sacred Fire',
+        'Modern Return'
+      ]
+    },
+    {
+      id: '13',
+      title: 'WARRIORS GATHERING',
+      artist: 'TOWENAAR',
+      coverUrl: '/images/releases/warriors-gathering.jpg',
+      releaseDate: '2024-12-15',
+      type: 'Album',
+      streams: '520K',
+      description: 'TOWENAAR\'s powerful finale to the year brings together epic battle themes and heroic anthems in a celebration of strength and unity.',
+      bandcampUrl: 'https://valhallarec0rds.bandcamp.com/album/warriors-gathering',
+      tracks: [
+        'Horn of Gathering',
+        'Warrior Assembly',
+        'Shield Wall',
+        'Sword Dance',
+        'Battle Hymn',
+        'Victory Feast',
+        'Hero\'s Farewell',
+        'Legends Remembered'
+      ]
     }
   ];
 
@@ -183,6 +405,7 @@ const LabelReleases: React.FC = () => {
                       {release.title}
                     </h3>
                     <p className="text-muted-foreground mb-3">{release.artist}</p>
+                    <p className="text-sm text-foreground/80 mb-3 line-clamp-2">{release.description}</p>
 
                     {/* Release Stats */}
                     <div className="flex items-center justify-between text-sm">
@@ -194,6 +417,17 @@ const LabelReleases: React.FC = () => {
                         <span className="font-semibold">{release.streams}</span>
                       </div>
                     </div>
+
+                    {/* Bandcamp Link */}
+                    <a 
+                      href={release.bandcampUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:underline text-sm mt-2"
+                    >
+                      <span>Listen on Bandcamp</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
               </div>

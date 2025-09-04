@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -158,7 +157,7 @@ export default function LoginPage() {
                       <FormItem>
                         <FormLabel>{t.emailLabel}</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="m@example.com" {...field} disabled={isPending || isGooglePending} />
+                          <Input type="email" placeholder={t.emailLabel} {...field} disabled={isPending || isGooglePending} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -176,7 +175,7 @@ export default function LoginPage() {
                           </Link>
                         </div>
                         <FormControl>
-                          <Input type="password" {...field} disabled={isPending || isGooglePending}/>
+                          <Input type="password" placeholder={t.passwordLabel} {...field} disabled={isPending || isGooglePending}/>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -188,6 +187,7 @@ export default function LoginPage() {
                   </Button>
                 </form>
               </Form>
+              {/* 
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t" />
@@ -206,6 +206,7 @@ export default function LoginPage() {
                  )}
                 {t.googleButton}
               </Button>
+              */}
            </div>
           <div className="mt-4 text-center text-sm">
             {t.noAccount}{' '}

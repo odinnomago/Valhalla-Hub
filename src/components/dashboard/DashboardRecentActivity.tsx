@@ -140,7 +140,7 @@ const DashboardRecentActivity: React.FC = () => {
     if (metadata.progress !== undefined) {
       elements.push(
         <div key="progress" className="flex items-center gap-1">
-          <span className="text-xs text-gray-500">Progresso:</span>
+          <span class="text-xs text-muted-foreground">Progresso:</span>
           <span className={`text-xs font-medium ${activity.color}`}>
             {metadata.progress}%
           </span>
@@ -162,8 +162,8 @@ const DashboardRecentActivity: React.FC = () => {
     if (metadata.participants) {
       elements.push(
         <div key="participants" className="flex items-center gap-1">
-          <span className="text-xs text-gray-500">👥</span>
-          <span className="text-xs text-gray-400">
+          <span class="text-xs text-muted-foreground">👥</span>
+          <span class="text-xs text-muted-foreground">
             {metadata.participants}
           </span>
         </div>
@@ -180,7 +180,7 @@ const DashboardRecentActivity: React.FC = () => {
                 ? 'bg-yellow-500' 
                 : 'bg-gray-500'
           }`}></span>
-          <span className="text-xs text-gray-400">
+          <span class="text-xs text-muted-foreground">
             {metadata.status}
           </span>
         </div>
@@ -191,18 +191,18 @@ const DashboardRecentActivity: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+    <div className="bg-card border border-border/50 rounded-2xl p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-bold text-white mb-1">
+          <h2 class="text-xl font-bold text-foreground mb-1">
             Atividades Recentes
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p class="text-muted-foreground text-sm">
             Seu histórico de ações e progresso
           </p>
         </div>
-        <button className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+        <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
           Ver Todas →
         </button>
       </div>
@@ -215,8 +215,8 @@ const DashboardRecentActivity: React.FC = () => {
             onClick={() => setFilter(filterOption.id as any)}
             className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
               filter === filterOption.id
-                ? 'bg-primary-500 text-black font-medium'
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
+                ? 'bg-primary text-primary-foreground font-medium'
+                : 'bg-card text-muted-foreground hover:bg-border hover:text-foreground'
             }`}
           >
             <span>{filterOption.icon}</span>
@@ -235,7 +235,7 @@ const DashboardRecentActivity: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className={`${activity.bgColor} border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-all duration-300 group`}
+              className={`${activity.bgColor} border border-border/50 rounded-xl p-4 hover:border-border transition-all duration-300 group`}
             >
               <div className="flex items-start gap-4">
                 {/* Icon */}
@@ -250,11 +250,11 @@ const DashboardRecentActivity: React.FC = () => {
                       <h3 className={`font-semibold ${activity.color} group-hover:text-opacity-80 transition-colors`}>
                         {activity.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p class="text-muted-foreground text-sm leading-relaxed">
                         {activity.description}
                       </p>
                     </div>
-                    <span className="text-xs text-gray-500 whitespace-nowrap">
+                    <span class="text-xs text-muted-foreground whitespace-nowrap">
                       {getRelativeTime(activity.timestamp)}
                     </span>
                   </div>
@@ -279,10 +279,10 @@ const DashboardRecentActivity: React.FC = () => {
             className="text-center py-12"
           >
             <div className="text-4xl mb-3">📭</div>
-            <h3 className="text-lg font-semibold text-white mb-2">
+            <h3 class="text-lg font-semibold text-foreground mb-2">
               Nenhuma atividade encontrada
             </h3>
-            <p className="text-gray-400 text-sm">
+            <p class="text-muted-foreground text-sm">
               Comece a explorar a plataforma para ver suas atividades aqui
             </p>
           </motion.div>
@@ -294,24 +294,24 @@ const DashboardRecentActivity: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-6 pt-6 border-t border-gray-800"
+        className="mt-6 pt-6 border-t border-border/50"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div>
-            <p className="text-lg font-bold text-white mb-1">15</p>
-            <p className="text-gray-400 text-xs">Ações Hoje</p>
+            <p class="text-lg font-bold text-foreground mb-1">15</p>
+            <p class="text-muted-foreground text-xs">Ações Hoje</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-white mb-1">89</p>
-            <p className="text-gray-400 text-xs">Esta Semana</p>
+            <p class="text-lg font-bold text-foreground mb-1">89</p>
+            <p class="text-muted-foreground text-xs">Esta Semana</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-white mb-1">234</p>
-            <p className="text-gray-400 text-xs">Este Mês</p>
+            <p class="text-lg font-bold text-foreground mb-1">234</p>
+            <p class="text-muted-foreground text-xs">Este Mês</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-white mb-1">12</p>
-            <p className="text-gray-400 text-xs">Sequência</p>
+            <p class="text-lg font-bold text-foreground mb-1">12</p>
+            <p class="text-muted-foreground text-xs">Sequência</p>
           </div>
         </div>
       </motion.div>

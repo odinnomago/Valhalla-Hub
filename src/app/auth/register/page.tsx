@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -35,9 +34,7 @@ const translations: Record<Language, any> = {
         title: "Create an Account",
         description: "Enter your information to create an account",
         fullNameLabel: "Full Name",
-        fullNamePlaceholder: "John Doe",
         emailLabel: "Email",
-        emailPlaceholder: "m@example.com",
         passwordLabel: "Password",
         createAccountButton: "Create Account",
         orContinueWith: "Or continue with",
@@ -54,9 +51,7 @@ const translations: Record<Language, any> = {
         title: "Criar uma Conta",
         description: "Insira suas informações para criar uma conta",
         fullNameLabel: "Nome Completo",
-        fullNamePlaceholder: "João da Silva",
         emailLabel: "E-mail",
-        emailPlaceholder: "m@exemplo.com",
         passwordLabel: "Senha",
         createAccountButton: "Criar Conta",
         orContinueWith: "Ou continue com",
@@ -73,9 +68,7 @@ const translations: Record<Language, any> = {
         title: "Crear una Cuenta",
         description: "Introduce tu información para crear una cuenta",
         fullNameLabel: "Nombre Completo",
-        fullNamePlaceholder: "Juan Pérez",
         emailLabel: "Correo Electrónico",
-        emailPlaceholder: "m@ejemplo.com",
         passwordLabel: "Contraseña",
         createAccountButton: "Crear Cuenta",
         orContinueWith: "O continuar con",
@@ -174,7 +167,7 @@ export default function RegisterPage() {
                     <FormItem>
                       <FormLabel>{t.fullNameLabel}</FormLabel>
                       <FormControl>
-                        <Input placeholder={t.fullNamePlaceholder} {...field} disabled={isPending || isGooglePending} />
+                        <Input placeholder={t.fullNameLabel} {...field} disabled={isPending || isGooglePending} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -187,7 +180,7 @@ export default function RegisterPage() {
                     <FormItem>
                       <FormLabel>{t.emailLabel}</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder={t.emailPlaceholder} {...field} disabled={isPending || isGooglePending} />
+                        <Input type="email" placeholder={t.emailLabel} {...field} disabled={isPending || isGooglePending} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -200,7 +193,7 @@ export default function RegisterPage() {
                     <FormItem>
                       <FormLabel>{t.passwordLabel}</FormLabel>
                       <FormControl>
-                        <Input type="password" {...field} disabled={isPending || isGooglePending} />
+                        <Input type="password" placeholder={t.passwordLabel} {...field} disabled={isPending || isGooglePending} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -212,6 +205,7 @@ export default function RegisterPage() {
                 </Button>
               </form>
             </Form>
+            {/* 
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
@@ -230,6 +224,7 @@ export default function RegisterPage() {
               )}
               {t.googleButton}
             </Button>
+            */}
           </div>
           <div className="mt-4 text-center text-sm">
             {t.alreadyHaveAccount}{' '}

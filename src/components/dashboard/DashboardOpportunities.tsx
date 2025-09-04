@@ -109,17 +109,17 @@ const DashboardOpportunities: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+    <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-lg font-bold text-white mb-1">
+          <h2 class="text-lg font-bold text-foreground mb-1">
             Oportunidades
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p class="text-muted-foreground text-sm">
             Recomendadas para você
           </p>
         </div>
-        <button className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+        <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
           Ver Todas →
         </button>
       </div>
@@ -131,7 +131,7 @@ const DashboardOpportunities: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className={`${opportunity.bgColor} border border-gray-700/50 rounded-xl p-4 hover:border-gray-600 transition-all group`}
+            className={`${opportunity.bgColor} border border-border/50 rounded-xl p-4 hover:border-border transition-all group`}
           >
             {/* Header */}
             <div className="flex items-start gap-3 mb-3">
@@ -147,7 +147,7 @@ const DashboardOpportunities: React.FC = () => {
                     ⏰ {opportunity.deadline}
                   </span>
                 </div>
-                <p className="text-gray-300 text-sm leading-relaxed mb-2">
+                <p class="text-muted-foreground text-sm leading-relaxed mb-2">
                   {opportunity.description}
                 </p>
               </div>
@@ -158,7 +158,7 @@ const DashboardOpportunities: React.FC = () => {
               {opportunity.tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="bg-gray-700/50 text-gray-300 text-xs px-2 py-1 rounded-full"
+                  className="bg-border text-muted-foreground text-xs px-2 py-1 rounded-full"
                 >
                   {tag}
                 </span>
@@ -170,7 +170,7 @@ const DashboardOpportunities: React.FC = () => {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1">
                   <span className="text-green-400">💰</span>
-                  <span className="text-gray-400">{opportunity.reward}</span>
+                  <span class="text-muted-foreground">{opportunity.reward}</span>
                 </div>
                 <span className={`px-2 py-1 rounded-full text-xs ${getDifficultyColor(opportunity.difficulty)}`}>
                   {getDifficultyLabel(opportunity.difficulty)}
@@ -179,10 +179,10 @@ const DashboardOpportunities: React.FC = () => {
               
               {opportunity.applicants && opportunity.maxApplicants && (
                 <div className="flex items-center gap-1">
-                  <span className="text-gray-500 text-xs">
+                  <span class="text-muted-foreground text-xs">
                     {opportunity.applicants}/{opportunity.maxApplicants}
                   </span>
-                  <div className="w-16 bg-gray-700 rounded-full h-1">
+                  <div class="w-16 bg-border rounded-full h-1">
                     <div 
                       className="bg-primary-500 h-1 rounded-full"
                       style={{ 
@@ -195,8 +195,8 @@ const DashboardOpportunities: React.FC = () => {
             </div>
 
             {/* Action Button */}
-            <div className="mt-3 pt-3 border-t border-gray-700/50">
-              <button className={`w-full ${opportunity.bgColor} border border-gray-600 text-white py-2 rounded-lg text-sm font-medium hover:border-gray-500 transition-colors group-hover:bg-opacity-20`}>
+            <div className="mt-3 pt-3 border-t border-border/50">
+              <button className={`w-full ${opportunity.bgColor} border border-border text-foreground py-2 rounded-lg text-sm font-medium hover:border-border transition-colors group-hover:bg-opacity-20`}>
                 {opportunity.type === 'show' ? 'Candidatar-se' :
                  opportunity.type === 'collaboration' ? 'Colaborar' :
                  opportunity.type === 'contest' ? 'Participar' :
@@ -213,16 +213,16 @@ const DashboardOpportunities: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-6 pt-6 border-t border-gray-800"
+        className="mt-6 pt-6 border-t border-border/50"
       >
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <p className="text-lg font-bold text-white mb-1">23</p>
-            <p className="text-gray-400 text-xs">Disponíveis</p>
+            <p class="text-lg font-bold text-foreground mb-1">23</p>
+            <p class="text-muted-foreground text-xs">Disponíveis</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-white mb-1">5</p>
-            <p className="text-gray-400 text-xs">Aplicadas</p>
+            <p class="text-lg font-bold text-foreground mb-1">5</p>
+            <p class="text-muted-foreground text-xs">Aplicadas</p>
           </div>
         </div>
       </motion.div>

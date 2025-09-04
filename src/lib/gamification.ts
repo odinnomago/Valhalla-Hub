@@ -593,6 +593,61 @@ export const calculateStreakBonus = (streakDays: number): number => {
   return 1; // Base multiplier
 };
 
+export const getUserLevel = (experience: number) => {
+  const level = calculateLevel(experience);
+  
+  // Level titles based on experience
+  const titles = [
+    'Novato',
+    'Aprendiz',
+    'Estudante',
+    'Praticante',
+    'Habilidoso',
+    'Proficiente',
+    'Avançado',
+    'Especialista',
+    'Mestre',
+    'Lenda'
+  ];
+  
+  const title = level <= titles.length ? titles[level - 1] : 'Lenda';
+  
+  return {
+    level,
+    title,
+    experience
+  };
+};
+
+export const getNextLevelProgress = (currentExperience: number) => {
+  const currentLevel = calculateLevel(currentExperience);
+  const nextLevel = currentLevel + 1;
+  
+  // If already at max level
+  if (currentLevel >= levelRequirements.length) {
+    return {
+      current: 0,
+      required: 0,
+      percentage: 100,
+      pointsNeeded: 0
+    };
+  }
+  
+  const currentLevelStartXP = levelRequirements[currentLevel - 1] || 0;
+  const nextLevelStartXP = levelRequirements[currentLevel];
+  
+  const progressInCurrentLevel = currentExperience - currentLevelStartXP;
+  const xpNeededForNextLevel = nextLevelStartXP - currentLevelStartXP;
+  const percentage = Math.min((progressInCurrentLevel / xpNeededForNextLevel) * 100, 100);
+  
+  return {
+    current: progressInCurrentLevel,
+    required: xpNeededForNextLevel,
+    percentage: Math.round(percentage),
+    pointsNeeded: nextLevelStartXP - currentExperience
+  };
+};
+
 export const getDailyMissions = (): Array<{
   id: string;
   title: string;

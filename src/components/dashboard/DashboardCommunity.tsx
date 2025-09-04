@@ -106,17 +106,17 @@ const DashboardCommunity: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+    <div className="bg-card border border-border/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-lg font-bold text-white mb-1">
+          <h2 class="text-lg font-bold text-foreground mb-1">
             Comunidade
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p class="text-muted-foreground text-sm">
             Atividade dos membros
           </p>
         </div>
-        <button className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+        <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
           Ver Tudo →
         </button>
       </div>
@@ -129,7 +129,7 @@ const DashboardCommunity: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="bg-gray-800/30 rounded-xl p-4 hover:bg-gray-800/50 transition-all group"
+            className="bg-card rounded-xl p-4 hover:bg-border transition-all group"
           >
             {/* User Info */}
             <div className="flex items-center gap-3 mb-3">
@@ -138,7 +138,7 @@ const DashboardCommunity: React.FC = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-sm font-medium">
+                  <span class="text-foreground text-sm font-medium">
                     {activity.user.name}
                   </span>
                   <span className={`text-xs ${getTierColor(activity.user.tier)}`}>
@@ -149,17 +149,17 @@ const DashboardCommunity: React.FC = () => {
                   <span className={`text-sm ${getActivityColor(activity.type)}`}>
                     {getActivityIcon(activity.type)}
                   </span>
-                  <span className="text-gray-500 text-xs">{activity.timestamp} atrás</span>
+                  <span class="text-muted-foreground text-xs">{activity.timestamp} atrás</span>
                 </div>
               </div>
             </div>
 
             {/* Content */}
             <div className="mb-3">
-              <h4 className="text-white font-medium text-sm mb-1">
+              <h4 class="text-foreground font-medium text-sm mb-1">
                 {activity.title}
               </h4>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p class="text-muted-foreground text-sm leading-relaxed">
                 {activity.content}
               </p>
             </div>
@@ -169,7 +169,7 @@ const DashboardCommunity: React.FC = () => {
               {activity.tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="bg-gray-700/50 text-gray-400 text-xs px-2 py-1 rounded-full"
+                  className="bg-border text-muted-foreground text-xs px-2 py-1 rounded-full"
                 >
                   #{tag}
                 </span>
@@ -202,9 +202,9 @@ const DashboardCommunity: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="border-t border-gray-800 pt-6"
+        className="border-t border-border/50 pt-6"
       >
-        <h3 className="text-white font-semibold mb-4 text-sm">🏆 Top Contribuidores</h3>
+        <h3 class="text-foreground font-semibold mb-4 text-sm">🏆 Top Contribuidores</h3>
         <div className="space-y-3">
           {topContributors.map((contributor, index) => (
             <div key={index} className="flex items-center gap-3">
@@ -212,10 +212,10 @@ const DashboardCommunity: React.FC = () => {
                 {contributor.name.charAt(0)}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white text-sm font-medium truncate">
+                <p class="text-foreground text-sm font-medium truncate">
                   {contributor.name}
                 </p>
-                <p className="text-gray-500 text-xs">
+                <p class="text-muted-foreground text-xs">
                   {contributor.points.toLocaleString()} pontos
                 </p>
               </div>
@@ -232,16 +232,16 @@ const DashboardCommunity: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="mt-6 pt-6 border-t border-gray-800"
+        className="mt-6 pt-6 border-t border-border/50"
       >
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
-            <p className="text-lg font-bold text-white mb-1">156</p>
-            <p className="text-gray-400 text-xs">Online Agora</p>
+            <p class="text-lg font-bold text-foreground mb-1">156</p>
+            <p class="text-muted-foreground text-xs">Online Agora</p>
           </div>
           <div>
-            <p className="text-lg font-bold text-white mb-1">34</p>
-            <p className="text-gray-400 text-xs">Suas Conexões</p>
+            <p class="text-lg font-bold text-foreground mb-1">34</p>
+            <p class="text-muted-foreground text-xs">Suas Conexões</p>
           </div>
         </div>
       </motion.div>
