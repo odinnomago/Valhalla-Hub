@@ -100,8 +100,7 @@ class NewsletterService {
           .update({
             interests: updatedInterests,
             segments: this.calculateSegments(updatedInterests, subscriberData.contentContext),
-            last_activity: new Date().toISOString(),
-            source: subscriberData.source
+            last_activity: new Date().toISOString()
           })
           .eq('id', existingSubscriber.id)
           .select()
